@@ -11,9 +11,14 @@ public class IndexModel : PageModel
     {
         _logger = logger;
     }
-
+ public List<Language> Languages {get; set; }
     public void OnGet()
     {
-
+  Languages= new List<Language>()
+  {
+    new Language() { Value = "C#", Text = "C#" },
+    new Language() { Value = "Javascript", Text = "Javascript" },
+    new Language() { Value = "Ruby", Text = "Ruby"  }
+  };
     }
 }

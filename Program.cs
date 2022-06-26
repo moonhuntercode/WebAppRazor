@@ -9,16 +9,7 @@ builder.Services.AddDbContext<RazorPagesMovieContext>(options =>
 
 var app = builder.Build();
 
-if (builder.Environment.IsDevelopment())
-{
-    builder.Services.AddDbContext<RazorPagesMovieContext>(options =>
-        options.UseSqlite(builder.Configuration.GetConnectionString("RazorPagesMovieContext")));
-}
-else
-{
-    builder.Services.AddDbContext<RazorPagesMovieContext>(options =>
-        options.UseSqlServer(builder.Configuration.GetConnectionString("ProductionMovieContext")));
-}
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
